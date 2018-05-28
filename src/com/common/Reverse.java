@@ -1,4 +1,4 @@
-package com.test;
+package com.common;
 
 public class Reverse {
 

@@ -1,22 +1,8 @@
-package com.structures;
+package com.structures.list;
 
 public class LinkedList {
 
 	Node headNode;
-
-	static class Node {
-
-		int data;
-		Node next;
-
-		// Constructor to create new node.
-		// Next will be by default null
-		Node(int d) {
-			data = d;
-			next = null;
-		}
-
-	}
 
 	public static void main(String[] args) {
 		LinkedList linkedList = new LinkedList();
@@ -43,60 +29,8 @@ public class LinkedList {
 
 		linkedList2.printList();
 		
-		addUpNodeData(linkedList, linkedList2);
+		SumNodeData.addUpNodeData(linkedList, linkedList2);
 	}
-	
-	public static void addUpNodeData(LinkedList l1, LinkedList l2) {
-		
-		LinkedList l3 = new LinkedList();
-		
-		Node n1 = l1.headNode;
-		Node n2 = l2.headNode;
-		Node n3 = l3.headNode;
-		Node prev = null;
-		
-		while (n1 != null && n2 != null) {
-			
-			Node _newNode = new Node(n1.data + n2.data);
-			
-			if(n3 == null) {
-				l3.headNode = _newNode;
-				n3 = l3.headNode;
-				prev = n3;
-			}else {
-				prev.next = _newNode;
-				prev = _newNode;
-				n3 = _newNode;
-			}
-			
-			n1 = n1.next;
-			n2 = n2.next;
-			
-		}
-		
-		if(n1 != null || n2 != null) {
-			
-			Node _intermediate = null;
-			
-			if(n1 != null)
-				_intermediate = n1;
-			else
-				_intermediate = n2;
-			
-			while (_intermediate != null) {
-				Node _newNode = new Node(_intermediate.data);
-				
-				prev.next = _newNode;
-				prev = prev.next;
-				
-				_intermediate = _intermediate.next;
-			}
-		}
-		
-		l3.printList();
-	}
-	
-	
 	
 	public void printList() {
 

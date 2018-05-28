@@ -1,4 +1,6 @@
-package com.test;
+package com.common;
+
+import com.test.Test;
 
 public class Finbonacci extends Test{
 
