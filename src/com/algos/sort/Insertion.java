@@ -1,24 +1,21 @@
-package com.test;
+package com.algos.sort;
 
 public class Insertion {
 
 	void sort(int arr[]) {
-		int n = arr.length;
-		for (int i = 1; i < n; i++) {
-
+		
+		int length = arr.length;
+		
+		// 
+		for(int i = 1; i < length; i++) {
 			int key = arr[i];
-			System.out.println("Key :" + key);
-
 			int j = i - 1;
-
-			// Move elements of arr[0..i-1], that are great, to one position ahead of their
-			// current position
 			while(j >= 0 && arr[j] > key) {
-				
 				arr[j + 1] = arr[j];
 				j = j - 1;
 			}
-			arr[j + 1] = key;
+			arr[j + 1 ] = key;
+			printArray(arr);
 		}
 	}
 	
@@ -32,7 +29,7 @@ public class Insertion {
 	
 	public static void main(String[] args) {
 		
-		int arr[] = {12, 11, 13, 5, 6};
+		int arr[] = {12, 5, 11, 6, 13,  0};
 		
 		Insertion insertion = new Insertion();
 		insertion.sort(arr);

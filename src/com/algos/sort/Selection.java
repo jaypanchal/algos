@@ -1,4 +1,4 @@
-package com.test;
+package com.algos.sort;
 
 public class Selection {
 
@@ -7,18 +7,16 @@ public class Selection {
 		int length = arr.length;
 		
 		for(int i = 0; i < length - 1; i++) {
-			
 			int min_index = i;
-			for(int j = i+1; j < length; j++) {
+			
+			// Move boundary of unsorted subarray
+			for(int j = i + 1; j < length; j++) {
 				if(arr[j] < arr[min_index]) {
-					System.out.println("min_index : " + min_index);
-					System.out.println(arr[j] + " (arr["+j+"]) is less than  (arr["+min_index+"])" + arr[min_index]);
-					
 					min_index = j;
 				}
 			}
 			
-			System.out.println("swapping arr["+min_index+"] " + arr[min_index] + ", with arr["+i+"] " + arr[i]);
+			//Swap the minimum element found from the sub array with the first element of sub array
 			int temp = arr[min_index];
 			arr[min_index] = arr[i];
 			arr[i] = temp;
