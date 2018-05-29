@@ -17,14 +17,16 @@ public class Reverse {
 		
 		String[] datas = data.split(" ");
 		System.out.println("trace");
-		String revrse = "";
+		String reverse = "";
 		for(int i = 0; i < datas.length; i++) {
+		//for(int i = datas.length -1; i >= 0; i--) {
 			String word = datas[i];
-			for(int j = word.length() - 1; j <=0 ; j--) {
-				revrse = revrse + word.charAt(j);
+			for(int j = word.length() - 1; j >= 0  ; j--) {
+				reverse = reverse + word.charAt(j);
 			}
+			reverse += " ";
 		}
-		System.out.println("Reverse: " + revrse);
+		System.out.println("Reverse: " + reverse);
 	}
 	
 }

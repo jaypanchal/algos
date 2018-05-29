@@ -5,15 +5,69 @@ import java.util.HashSet;
 
 public class CommonProblems {
 
+	static final int MAX_CHAR = 256;
+	
 	//HashMap<K, V>
 	public static void main(String[] args) {
 		//getOrderOfNumber(12345);
-		System.out.println(9 << 6);
+		//System.out.println(9 << 6);
 		//System.out.println("power(2, 3) : " + power(2, 8));
-		System.out.println(isArmstrong(153));
-		findFirstRepeatedInteger(new int[]{4,5,3,5,2,5,6,6,7,8});
+		//System.out.println(isArmstrong(153));
+		//findFirstRepeatedInteger(new int[]{4,5,3,5,2,5,6,6,7,8});
+		findOccurrenceOfCharaters("ssdedrf");
 	}
 	
+	//Remove duplicates from array
+	
+	//
+	static void isPalindromString(String data) {
+		
+	}
+	
+	static void chaeckWhetherStringCanContainsPalindromOrNot(String data) {
+		
+	}
+	
+	static void fibonacci() {
+		
+	}
+	
+	static void isPrime() {
+		
+	}
+	
+	static void getFirstNPrime() {
+		
+	}
+	
+	static void getPrimeNummbersUptoNth() {
+		
+	}
+	
+	static final int MAX_LENGTH = 256;
+	static void findOccurrenceOfCharaters(String data) {
+		
+		int[] count = new int[MAX_LENGTH];
+		for(int i = 0; i < data.length(); i++)
+			count[data.charAt(i)]++;
+		
+		char[] ch = new char[data.length()];
+		for(int i = 0; i < data.length(); i++) {
+			ch[i] = data.charAt(i);
+			
+			int find = 0;
+			for(int j = 0; j <= i; j++) {
+				if(data.charAt(i) == ch[j]) {
+					find++;
+				}
+			}
+			if(find == 1) {
+				System.out.println("Character : " + data.charAt(i) + " found " + count[data.charAt(i)] + " times");
+			}
+		}
+		
+	}
+		
 	static void findFirstRepeatedInteger(int[] data) {
 		
 		int repeatedNumber = -1;
